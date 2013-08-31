@@ -1,0 +1,1 @@
+install duplicate script from \Code to C:\Users\{User}\.gimp-2.8\plug-ins

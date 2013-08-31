@@ -1,0 +1,35 @@
+GIMP 2.8.6 Python Console
+Python 2.7.5 (default, May 15 2013, 22:43:36) [MSC v.1500 32 bit (Intel)]
+>>> layer = pdb.gimp_image_get_layer_by_name(image, 'UnitIcon')
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+NameError: name 'image' is not defined
+>>> g = gimp.pdb
+>>> images = gimp.image_list()
+>>> my_image = images[0]
+>>> layer = pdb.gimp_image_get_layer_by_name(my_image, 'UnitIcon')
+>>> print layer
+<gimp.Layer 'UnitIcon'>
+>>> layer = pdb.gimp_file_load_layer(my_image, 'C:\Users\u0064666\Pictures\Cards\ImagesFromCB\Aleph\280801-0219-Icon.png')
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+RuntimeError: Could not open 'C:\Users\u0064666\Pictures\Cards\ImagesFromCB\Aleph80801-0219-Icon.png' for reading: Invalid argument
+>>> layer = pdb.gimp_file_load_layer(my_image, 'C:\\Users\\u0064666\\Pictures\\Cards\\ImagesFromCB\\Aleph\\280801-0219-Icon.png')
+>>> parent = pdb.gimp_image_get_layer_by_name(my_image, 'UnitIcon')
+>>> pdb.gimp_image_insert_layer(my_image, layer, 0, 0)
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+TypeError: wrong parameter type
+>>> pdb.gimp_image_insert_layer(my_image, layer, None, 0)
+>>> pdb.gimp_image_select_rectangle(my_image, 0, 0, 0, layer.width, layer.height)
+>>> non_empty = pdb.gimp_edit_copy(drawable)
+Traceback (most recent call last):
+  File "<input>", line 1, in <module>
+NameError: name 'drawable' is not defined
+>>> non_empty = pdb.gimp_edit_copy(layer)
+>>> non_empty
+1
+>>> floating_sel = pdb.gimp_edit_paste(parent, TRUE)
+>>> floating_sel = pdb.gimp_edit_paste(parent, FALSE)
+>>> pdb.gimp_floating_sel_anchor(floating_sel)
+>>> 

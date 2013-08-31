@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" name="Default" comment="" />
+    <ignored path="InfinityJSONParser.iws" />
+    <ignored path=".idea/workspace.xml" />
+    <file path="/jsonReader.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377872112759" ignored="false" />
+    <file path="/ariadna.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377537599525" ignored="false" />
+    <file path="/decoder.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377536410472" ignored="false" />
+    <file path="/yujing.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377633458062" ignored="false" />
+    <file path="/combined.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377633464800" ignored="false" />
+    <file path="/haqq.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377633472628" ignored="false" />
+    <file path="/merc.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377633479695" ignored="false" />
+    <file path="/nomads.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377633485525" ignored="false" />
+    <file path="/other.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377633492903" ignored="false" />
+    <file path="/pano.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377633498275" ignored="false" />
+    <file path="/tohaa.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377633512120" ignored="false" />
+    <file path="/aleph.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377634836446" ignored="false" />
+    <file path="$PROJECT_DIR$/../CBImageSpider/spider.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377671359965" ignored="false" />
+    <file path="$PROJECT_DIR$/../CBImageSpider/ReadFaction.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377696696312" ignored="false" />
+    <file path="/ReadFaction.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377696551504" ignored="false" />
+    <file path="/fragment.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377808990377" ignored="false" />
+    <file path="/duplicate_from_template.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377891615352" ignored="false" />
+    <file path="/rules.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377720501675" ignored="false" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
+  <component name="CreatePatchCommitExecutor">
+    <option name="PATCH_PATH" value="" />
+  </component>
+  <component name="DaemonCodeAnalyzer">
+    <disable_hints />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="FavoritesManager">
+    <favorites_list name="InfinityJSONParser" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file leaf-file-name="jsonReader.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jsonReader.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="177" column="56" selection-start="6767" selection-end="6774" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weapons.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/Other/weapons.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="323" column="18" selection-start="5781" selection-end="5781" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ariadna.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/ariadna.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2005" column="0" selection-start="28698" selection-end="28698" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="rules.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/Other/rules.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="69" column="1732" selection-start="61336" selection-end="61338" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="decoder.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://C:/Python27/Lib/json/decoder.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="380" column="0" selection-start="13718" selection-end="13718" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="aleph.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/aleph.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1257" column="6" selection-start="18151" selection-end="18154" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="duplicate_from_template.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="57" column="34" selection-start="1662" selection-end="1662" vertical-scroll-proportion="1.1293706">
+              <folding>
+                <element signature="e#22#42#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nomads.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/nomads.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="13" column="10" selection-start="223" selection-end="223" vertical-scroll-proportion="-3.3333333">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindManager">
+    <FindUsagesManager>
+      <setting name="OPEN_NEW_TAB" value="false" />
+    </FindUsagesManager>
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="changedFiles">
+      <list>
+        <option value="$PROJECT_DIR$/Data/merc.json" />
+        <option value="$PROJECT_DIR$/Data/other.json" />
+        <option value="$PROJECT_DIR$/Data/tohaa.json" />
+        <option value="$PROJECT_DIR$/Data/aleph.json" />
+        <option value="$USER_HOME$/AppData/Local/Temp/aleph.json" />
+        <option value="$PROJECT_DIR$/Data/combined.json" />
+        <option value="$PROJECT_DIR$/Data/haqq.json" />
+        <option value="$PROJECT_DIR$/Data/nomads.json" />
+        <option value="$PROJECT_DIR$/Data/pano.json" />
+        <option value="$PROJECT_DIR$/Data/yujing.json" />
+        <option value="$USER_HOME$/.gimp-2.8/plug-ins/py-test.py" />
+        <option value="$PROJECT_DIR$/Data/wiki.txt" />
+        <option value="$PROJECT_DIR$/Data/rules.json" />
+        <option value="$PROJECT_DIR$/Data/Other/rules.json" />
+        <option value="$PROJECT_DIR$/jsonReader.py" />
+        <option value="$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds">
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+    <OptionsSetting value="true" id="Add" />
+    <OptionsSetting value="true" id="Remove" />
+    <OptionsSetting value="true" id="Checkout" />
+    <OptionsSetting value="true" id="Update" />
+    <OptionsSetting value="true" id="Status" />
+    <OptionsSetting value="true" id="Edit" />
+    <ConfirmationsSetting value="0" id="Add" />
+    <ConfirmationsSetting value="0" id="Remove" />
+  </component>
+  <component name="ProjectReloadState">
+    <option name="STATE" value="0" />
+  </component>
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1" splitterProportion="0.5">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+    </navigator>
+    <panes>
+      <pane id="ProjectPane">
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinityJSONParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinityJSONParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinityJSONParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinityJSONParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinityJSONParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scope" />
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/nomads.json" />
+    <property name="restartRequiresConfirmation" value="true" />
+    <property name="FullScreen" value="false" />
+  </component>
+  <component name="PyConsoleOptionsProvider">
+    <option name="myPythonConsoleState">
+      <PyConsoleSettings />
+    </option>
+    <option name="myDjangoConsoleState">
+      <PyConsoleSettings />
+    </option>
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\u0064666\.gimp-2.8\plug-ins" />
+      <recent name="C:\Python Projects\InfinityJSONParser\Data" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.Test Parser">
+    <configuration default="true" type="tests" factoryName="Nosetests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="InfinityJSONParser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="InfinityJSONParser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <method />
+    </configuration>
+    <configuration default="true" type="tests" factoryName="Doctests">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="InfinityJSONParser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_SCRIPT" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Test Parser" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:/Python27/python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="InfinityJSONParser" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jsonReader.py" />
+      <option name="PARAMETERS" value="" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
+    <list size="1">
+      <item index="0" class="java.lang.String" itemvalue="Python.Test Parser" />
+    </list>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" name="Default" comment="" />
+      <created>1377532335641</created>
+      <updated>1377532335641</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="false" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14727855" sideWeight="0.6705998" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39921337" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940018" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="true" />
+    <option name="myTodoPanelSettings">
+      <value>
+        <are-packages-shown value="false" />
+        <are-modules-shown value="false" />
+        <flatten-packages value="false" />
+        <is-autoscroll-to-source value="false" />
+      </value>
+    </option>
+    <option name="PERFORM_UPDATE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_COMMIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_EDIT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_CHECKOUT_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ADD_REMOVE_IN_BACKGROUND" value="true" />
+    <option name="PERFORM_ROLLBACK_IN_BACKGROUND" value="false" />
+    <option name="CHECK_LOCALLY_CHANGED_CONFLICTS_IN_BACKGROUND" value="false" />
+    <option name="CHANGED_ON_SERVER_INTERVAL" value="60" />
+    <option name="SHOW_ONLY_CHANGED_IN_SELECTION_DIFF" value="true" />
+    <option name="CHECK_COMMIT_MESSAGE_SPELLING" value="true" />
+    <option name="DEFAULT_PATCH_EXTENSION" value="patch" />
+    <option name="SHORT_DIFF_HORIZONTALLY" value="true" />
+    <option name="SHORT_DIFF_EXTRA_LINES" value="2" />
+    <option name="SOFT_WRAPS_IN_SHORT_DIFF" value="true" />
+    <option name="INCLUDE_TEXT_INTO_PATCH" value="false" />
+    <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
+    <option name="SHOW_FILE_HISTORY_DETAILS" value="true" />
+    <option name="SHOW_VCS_ERROR_NOTIFICATIONS" value="true" />
+    <option name="SHOW_DIRTY_RECURSIVELY" value="false" />
+    <option name="LIMIT_HISTORY" value="true" />
+    <option name="MAXIMUM_HISTORY_ROWS" value="1000" />
+    <option name="UPDATE_FILTER_SCOPE_NAME" />
+    <option name="USE_COMMIT_MESSAGE_MARGIN" value="false" />
+    <option name="COMMIT_MESSAGE_MARGIN_SIZE" value="72" />
+    <option name="WRAP_WHEN_TYPING_REACHES_RIGHT_MARGIN" value="false" />
+    <option name="FORCE_NON_EMPTY_COMMENT" value="false" />
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="false" />
+    <option name="LAST_COMMIT_MESSAGE" />
+    <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="false" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_FILES_UP_TO_DATE_BEFORE_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="REFORMAT_BEFORE_FILE_COMMIT" value="false" />
+    <option name="FILE_HISTORY_DIALOG_COMMENTS_SPLITTER_PROPORTION" value="0.8" />
+    <option name="FILE_HISTORY_DIALOG_SPLITTER_PROPORTION" value="0.5" />
+    <option name="ACTIVE_VCS_NAME" />
+    <option name="UPDATE_GROUP_BY_PACKAGES" value="false" />
+    <option name="UPDATE_GROUP_BY_CHANGELIST" value="false" />
+    <option name="UPDATE_FILTER_BY_SCOPE" value="false" />
+    <option name="SHOW_FILE_HISTORY_AS_TREE" value="false" />
+    <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.6" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="12" />
+    </breakpoint-manager>
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Data/nomads.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="12" selection-start="46" selection-end="54" vertical-scroll-proportion="-0.67105263" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/tohaa.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="129" column="16" selection-start="1858" selection-end="1863" vertical-scroll-proportion="-17.653847" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/yujing.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="330" column="12" selection-start="5286" selection-end="5286" vertical-scroll-proportion="-5.392157" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Other/wiki.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="32" selection-start="418" selection-end="433" vertical-scroll-proportion="-13.076923" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/wiki.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="14" column="451362" selection-start="663" selection-end="452017" vertical-scroll-proportion="0.24335378" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/py-test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="39" selection-start="58" selection-end="83" vertical-scroll-proportion="0.051463168" />
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1126" column="26" selection-start="47078" selection-end="47078" vertical-scroll-proportion="0.42051283" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/json/decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="380" column="0" selection-start="13718" selection-end="13718" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/aleph.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1257" column="6" selection-start="18151" selection-end="18154" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Other/rules.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="1732" selection-start="61336" selection-end="61338" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/ariadna.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2005" column="0" selection-start="28698" selection-end="28698" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Pictures/Cards/Data/ariadna.dat">
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="244" selection-start="516" selection-end="516" vertical-scroll-proportion="-1.36" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/Other/weapons.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="323" column="18" selection-start="5781" selection-end="5781" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jsonReader.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="177" column="56" selection-start="6767" selection-end="6774" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/nomads.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="10" selection-start="223" selection-end="223" vertical-scroll-proportion="-3.3333333">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="57" column="34" selection-start="1662" selection-end="1662" vertical-scroll-proportion="1.1293706">
+          <folding>
+            <element signature="e#22#42#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+</project>
+
