@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 from gimpfu import *
-import os
 import json
 
 errOut = None
@@ -8,13 +7,13 @@ logOut = None
 
 def logError(exception, record_name):
     global errOut
-    if (errOut == None):
+    if errOut is None:
         errOut = open("C:\Users\u0064666\Pictures\Cards\\renderLog_errors.txt", "w")
-    errOut.write("[" + record_name +"]")
+    errOut.write("[" + record_name +"]: " + str(exception))
 
 def logProcessing(record_name, msg):
     global logOut
-    if (logOut == None):
+    if logOut is None:
         logOut = open("C:\Users\u0064666\Pictures\Cards\\renderLog.txt", "w")
     logOut.write("[" + record_name + "]: " + msg + "\r\n")
 
@@ -72,13 +71,44 @@ def drawRangeBand(template, bs, modifier, bandMin, bandMax):
         layer = pdb.gimp_image_get_layer_by_name(template, 'RangeBand' + str(i))
         pdb.gimp_context_set_foreground(fillcolor)
         pdb.gimp_edit_bucket_fill(layer, FG_BUCKET_FILL, NORMAL_MODE, 100, 255, FALSE, 0, 0)
-        pdb.gimp_context_set_foreground("white")
-        text = pdb.gimp_text_layer_new(template, str(bs + modifier), "Orbitron Medium", 23, PIXELS)
+        pdb.gimp_context_set_foreground("black")
+        text = pdb.gimp_text_layer_new(template, str(bs + modifier), "Orbitron Medium", 30, PIXELS)
         draw_x = layer.offsets[0] + layer.width / 2 - text.width / 2
         draw_y = layer.offsets[1] + layer.height / 2 - text.height / 2
         pdb.gimp_image_insert_layer(template, text, None, 0)
         pdb.gimp_layer_set_offsets(text, draw_x, draw_y)
 
+def addRulesText(template, title, text, background_y):
+
+    temp_image = pdb.gimp_image_new(template.width, template.height, RGB)
+    # create a new text layer and set the font to the title font
+    title_text_layer = pdb.gimp_text_layer_new(temp_image, title, 'Orbitron Medium', 25, PIXELS)
+    # create a new text layer and set the font to the rules font
+    rules_text_layer = pdb.gimp_text_layer_new(temp_image, title, 'Verdana', 20, PIXELS)
+    # set the title text to 0,0 on the new layer
+    pdb.gimp_layer_set_offsets(title_text_layer, 0 , 0)
+    # set the rules x to 20 and the y to to the height of the title layer + 10 [magic numbers, adjust manually]
+    pdb.gimp_layer_set_offsets(rules_text_layer, 20 ,10)
+    # merge the two text layers with the background layer
+    pdb.gimp_image_merge_visible_layers(temp_image, EXPAND_AS_NECESSARY)
+    # autocrop the back ground layer
+    pdb.plug_in_autocrop(1, temp_image, temp_image.layers[0])
+
+    background_x = 0
+    # copy the entire layer into the tempalte
+    item_copy = pdb.gimp_layer_new_from_drawable(temp_image.layers[0], template)
+    # save the height of the layer to be returned later
+    height = item_copy.height
+    # insert the new layer into the template
+    pdb.gimp_image_insert_layer(template, item_copy, None, 0)
+    # set the offsets
+    pdb.gimp_layer_set_offsets(item_copy, background_x, background_y)
+    # merge the new layer down into the tempalte
+    pdb.gimp_image_merge_down(template, item_copy, CLIP_TO_IMAGE)
+    # clean up the temp image we created
+    pdb.gimp_image_delete(temp_image)
+    # return height for later layers
+    return height
 
 def generate_images_from_template(image, drawable, filename, append, outdirectory):
     # Group the operations of this script
@@ -253,9 +283,11 @@ def generate_images_from_template(image, drawable, filename, append, outdirector
 
                     index = index + 1
                 # write the duplicate to disk
+                #pdb.gimp_image_scale(duplicate, 500, 300)
                 merged = pdb.gimp_image_merge_visible_layers(duplicate, CLIP_TO_IMAGE)
                 logProcessing(values[0], "Writing PNG")
-                pdb.file_png_save2(duplicate, merged, outfile, outfile, FALSE, 9, FALSE, pdb.gimp_drawable_has_alpha(merged), FALSE, FALSE, FALSE, TRUE, FALSE )
+                #pdb.gimp_image_set_resolution(duplicate, 500, 500)
+                pdb.file_png_save2(duplicate, merged, outfile, outfile, FALSE, 9, FALSE, pdb.gimp_drawable_has_alpha(merged), FALSE, TRUE, FALSE, TRUE, FALSE )
                 pdb.gimp_image_delete(duplicate)
             except Exception as e:
                 logError(e, values[0])

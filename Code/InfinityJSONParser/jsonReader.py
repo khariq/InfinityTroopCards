@@ -1,5 +1,5 @@
 import os
-
+import decoder
 __author__ = 'u0064666'
 
 import json
@@ -30,138 +30,181 @@ header= 'UnitNameValue\tUnitIcon\tUnitPortrait\tTrainingIcon\tImpIcon\tMOVValue\
 currentISC = 'null'
 fout = None
 
+
+def getUnitIcons(dict):
+    unitIcon = ''
+    unitPortrait = ''
+
+    if dict.get('cbcode', None) is not None:
+        directory = dict['army']
+        directory = iconDirectoryMap.get(directory, '')
+        if directory != '':
+            directory = pathToIcons + directory
+            for item in dict['cbcode']:
+                if item + '.png' in os.listdir(directory):
+                    unitPortrait = directory + '\\' + item + '.png'
+                    unitIcon = directory + '\\' +item + '-Icon.png'
+        else:
+            unitIcon = 'NotFound'
+
+    return unitIcon, unitPortrait
+
+
+def writeImagePaths(dict):
+    unitIcon, unitPortrait = getUnitIcons(dict)
+    line = ''
+    line += unitIcon + '\t'
+    line += unitPortrait + '\t'
+    if dict.get('irr', '') == 'X':
+        line += pathToIrregularIcon + "\t"
+    else:
+        line += pathToRegularIcon + "\t"
+
+    if dict.get('imp', '') == 'X':
+        line += pathToImpetuousIcon + "\t"
+    else:
+        line += "\t"
+
+    return line
+
+
+def writeStatLine(dict):
+    line = ''
+    line += dict['mov'] + '\t'
+    line += dict['cc'] + '\t'
+    line += dict['bs'] + '\t'
+    line += dict['ph'] + '\t'
+    line += dict['wip'] + '\t'
+    line += dict['arm'] + '\t'
+    line += dict['bts'] + '\t'
+    line += dict['w'] + '\t'
+    line += dict['ava'] + '\t'
+
+    return line
+
+
+def writeAbilities(dict, loadout):
+    count = 0
+    abilities = ""
+    line = ''
+    for spec in loadout['spec']:
+        count += 1
+        abilities = abilities + spec + ", "
+
+    for spec in dict['spec']:
+        count += 1
+        abilities = abilities + spec + ", "
+
+    # trim the trailing [, ] off
+    if count > 0:
+        printLine = line + abilities[:-2] + '\t'
+    else:
+        printLine = line + '\t'
+
+    ability1 = ''
+    ability2 = ''
+    ability1_frequency = 99999
+    ability2_frequency = 99999
+    count = 0
+    for ability in abilities.split(','):
+        if ability.strip() in rules:
+            freq = 99999
+            for a in decoder.rules_frequency:
+                if a[0] == ability.strip():
+                    freq = a[1]
+                    break
+
+            if freq < ability1_frequency:
+                ability1 = ability
+                ability1_frequency = freq
+            elif freq < ability2_frequency:
+                ability2 = ability
+                ability2_frequency = freq
+
+    if len(ability1) > 0:
+        printLine += ability1 + '\t' + rules.get(ability1.strip(), '') + '\t'
+    else:
+        printLine += '\t\t'
+    if len(ability2) > 0:
+        printLine += ability2 + '\t' + rules.get(ability2.strip(), '') + '\t'
+    else:
+        printLine += '\t\t'
+
+    return printLine
+
+
+def writeWeapons(dict, loadout):
+    line = ''
+    count = 0
+    for weapon in dict['bsw']:
+        count += 1
+        if count > 5:
+            break
+        line += weapon + '\t'
+
+    for weapon in loadout['bsw']:
+        count += 1
+        if count > 5:
+            break
+        line += weapon + '\t'
+
+    for weapon in dict['ccw']:
+        count += 1
+        if count > 5:
+            break
+        line += weapon + '\t'
+
+    for weapon in loadout['ccw']:
+        count += 1
+        if count > 5:
+            break
+        line += weapon + '\t'
+
+    while count < 5:
+        line += blankWeaponString
+        count += 1
+
+    return line
+
+
+def writeName(dict, loadout):
+    name = ""
+    if loadout['code'] == 'Default':
+        name = dict['isc']
+    else:
+        name = dict['isc'] + ' - ' + loadout['code']
+
+    return name.replace('/', '-').replace('"', '') + '\t'
+
+
 def unit(dict):
     if 'name' in dict and 'cbcode' in dict and 'army' in dict:
         line = ""
-        # global currentISC
         global fout
-        #
-        # if dict['isc'] != currentISC:
-        #     # close the current file stream
-        #     if fout != None:
-        #         fout.close()
-        #     # open a file stream for the new ISC
-        #     if not os.path.exists(rootOutputPath + dict.get('army', '')):
-        #         os.makedirs(rootOutputPath + dict.get('army', ''))
-        #     fout = open(rootOutputPath + dict.get('army', '') + '\\' + dict['isc'].replace('"', '').replace('/', '-') + '.dat', 'w')
-        #     fout.write(header + "\r\n")
-        #     currentISC = dict['isc']
-
-        unitIcon = ''
-        unitPortrait = ''
-        if dict.get('cbcode', None) != None:
-            directory = dict['army']
-            directory = iconDirectoryMap.get(directory, '')
-            if directory != '':
-                directory = pathToIcons + directory
-                for item in dict['cbcode']:
-                    if item + '.png' in os.listdir(directory):
-                        unitPortrait = directory + '\\' + item + '.png'
-                        unitIcon = directory + '\\' +item + '-Icon.png'
-        else:
-            unitIcon = 'NotFound'
 
         if 'childs' in dict:
             types = dict['childs']
 
-            #line = '"' + dict['type'] + '" '
-            line = line +  unitIcon + '\t'
-            line = line +  unitPortrait + '\t'
-            if dict.get('irr', '') == 'X':
-                line = line + pathToIrregularIcon + "\t"
-            else:
-                line = line + pathToRegularIcon + "\t"
+            line += writeImagePaths(dict)
 
-            if dict.get('imp', '') == 'X':
-                line = line + pathToImpetuousIcon + "\t"
-            else:
-                line = line + "\t"
-
-            line = line +  dict['mov'] + '\t'
-            line = line +  dict['cc'] + '\t'
-            line = line +  dict['bs'] + '\t'
-            line = line + dict['ph'] + '\t'
-            line = line + dict['wip'] + '\t'
-            line = line + dict['arm'] + '\t'
-            line = line + dict['bts'] + '\t'
-            line = line + dict['w'] + '\t'
-            line = line + dict['ava'] + '\t'
+            line += writeStatLine(dict)
 
             for t in types:
                 printLine = line
 
-                printLine = printLine + t['swc'] + '\t'
-                printLine = printLine + t['cost'] + '\t'
-                
-                name = ""
-                if t['code'] == 'Default':
-                    name = dict['isc']
-                else:
-                    name = dict['isc'] + ' - ' + t['code']
+                # Write Costs
+                printLine += t['swc'] + '\t'
+                printLine += t['cost'] + '\t'
 
-                printLine = name.replace('/', '-').replace('"', '') + '\t' + printLine
+                # insert the name to the front of the line
+                printLine = writeName(dict, t) + printLine
         
-                count = 0
-                abilities = ""
-                for spec in t['spec']:
-                    count = count + 1
-                    abilities = abilities + spec + ", "
+                printLine += writeAbilities(dict, t)
 
-                for spec in dict['spec']:
-                    count = count + 1
-                    abilities = abilities + spec + ", "
+                printLine += writeWeapons(dict, t)
 
+                printLine += "\r\n"
 
-                # trim the trailing [, ] off
-                if (count > 0):
-                    printLine = printLine + abilities[:-2] + '\t'
-                else:
-                    printLine = printLine + '\t'
-
-                count = 0
-                for ability in abilities.split(','):
-                    if ability.strip() == 'V: Dogged':
-                        stopHere = True
-                    if ability.strip() in rules:
-                        printLine = printLine + ability +'\t' + rules.get(ability.strip(), '') + '\t'
-                        count = count + 1
-                    if count == 2:
-                        break
-                while count < 2:
-                    printLine = printLine + "\t\t"
-                    count = count + 1
-
-                count = 0
-                for weapon in dict['bsw']:
-                    count = count + 1
-                    if count > 5:
-                        break
-                    txt = ""
-                    printLine = printLine + weapon + '\t'# weaponData.get(weapon, blankWeaponString)
-
-                for weapon in t['bsw']:
-                    count = count + 1
-                    if count > 5:
-                        break
-                    printLine = printLine + weapon + '\t'#weaponData.get(weapon, blankWeaponString)
-
-                for weapon in dict['ccw']:
-                    count = count + 1
-                    if count > 5:
-                        break
-                    printLine = printLine + weapon + '\t'#weaponData.get(weapon, blankWeaponString)
-
-                for weapon in t['ccw']:
-                    count = count + 1
-                    if count > 5:
-                        break
-                    printLine = printLine + weapon + '\t'#weaponData.get(weapon, blankWeaponString)
-
-                while count < 5:
-                    printLine = printLine + blankWeaponString
-                    count = count + 1
-
-                printLine =  printLine + "\r\n"
                 print printLine
                 fout.write(unicode(printLine))
 
@@ -172,13 +215,13 @@ def weapon(dict):
     line = ""
     #Weapon5Value W5SValue W5MValue W5LValue W5MaxValue W5DmgValue W5BValue W5AmmoValue W5SpecialValue
     line = dict['name'] + '\t'
-    line = line +  dict['short_dist'] + '/' + dict['short_mod'] + '\t'
-    line = line + dict['medium_dist'] + '/' + dict['medium_mod'] + '\t'
-    line = line + dict['long_dist'] + '/' + dict['long_mod'] + '\t'
-    line = line + dict['max_dist'] + '/' + dict['max_mod'] + '\t'
-    line = line + dict['damage'] + '\t'
-    line = line + dict['burst'] + '\t'
-    line = line + dict['ammo'] + '\t'
+    line +=  dict['short_dist'] + '/' + dict['short_mod'] + '\t'
+    line += dict['medium_dist'] + '/' + dict['medium_mod'] + '\t'
+    line += dict['long_dist'] + '/' + dict['long_mod'] + '\t'
+    line += dict['max_dist'] + '/' + dict['max_mod'] + '\t'
+    line += dict['damage'] + '\t'
+    line += dict['burst'] + '\t'
+    line += dict['ammo'] + '\t'
     notes = ""
     if dict['cc'] == 'Yes':
         notes = notes + 'CC '
@@ -188,7 +231,7 @@ def weapon(dict):
         notes = notes + 'EM '
 
     notes = notes + dict.get('note', '')
-    line = line + notes + '\t'
+    line += notes + '\t'
 
     weaponData[dict['name']] = line
     weaponData[dict['name'] + ' (2)'] = line
@@ -211,6 +254,8 @@ json.load(f, object_hook=weapon)
 
 f = open("C:\\Python Projects\\InfinityJSONParser\\Data\\Other\\rules.json", "r")
 json.load(f, object_hook=rulesAndEquipment)
+
+decoder.count_rules_frequency()
 
 runFile("aleph.json", "aleph")
 runFile("ariadna.json", "ariadna")
