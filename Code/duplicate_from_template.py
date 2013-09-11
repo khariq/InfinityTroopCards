@@ -80,21 +80,48 @@ def drawRangeBand(template, bs, modifier, bandMin, bandMax):
 
 def addRulesText(template, title, text, background_y):
 
+    title_text_fontsize = 50
+    title_text_font = 'Orbitron Medium'
+
+    rules_text_fontsize = 30
+    rules_text_font = 'Verdana'
+
+    rules_vertical_offset_padding = 10
+    rules_horizontal_offset_padding = 20
+
+    logProcessing(title + ': ' + str(background_y), text)
     temp_image = pdb.gimp_image_new(template.width, template.height, RGB)
+
     # create a new text layer and set the font to the title font
-    title_text_layer = pdb.gimp_text_layer_new(temp_image, title, 'Orbitron Medium', 25, PIXELS)
+    title_text_layer = pdb.gimp_text_layer_new(temp_image, 'Title', title_text_font, title_text_fontsize, PIXELS)
     # create a new text layer and set the font to the rules font
-    rules_text_layer = pdb.gimp_text_layer_new(temp_image, title, 'Verdana', 20, PIXELS)
+    rules_text_layer = pdb.gimp_text_layer_new(temp_image, 'Text', rules_text_font, rules_text_fontsize, PIXELS)
     # set the title text to 0,0 on the new layer
     pdb.gimp_layer_set_offsets(title_text_layer, 0 , 0)
-    # set the rules x to 20 and the y to to the height of the title layer + 10 [magic numbers, adjust manually]
-    pdb.gimp_layer_set_offsets(rules_text_layer, 20 ,10)
-    # merge the two text layers with the background layer
-    pdb.gimp_image_merge_visible_layers(temp_image, EXPAND_AS_NECESSARY)
-    # autocrop the back ground layer
-    pdb.plug_in_autocrop(1, temp_image, temp_image.layers[0])
+    # insert both layers
+    pdb.gimp_image_insert_layer(temp_image, title_text_layer, None, 0)
+    pdb.gimp_image_insert_layer(temp_image, rules_text_layer, None, 1)
 
-    background_x = 0
+    pdb.gimp_text_layer_set_text(title_text_layer, title)
+    pdb.gimp_text_layer_set_text(rules_text_layer, text)
+    # set the rules x to 20 and the y to to the height of the title layer + 10 [magic numbers, adjust manually]
+    # calculate the vertical extents of the title
+    extents = pdb.gimp_text_get_extents_fontname(title, title_text_fontsize, PIXELS, title_text_font)
+    pdb.gimp_text_layer_resize(title_text_layer, 1200, extents[1])
+
+    pdb.gimp_layer_set_offsets(rules_text_layer, rules_horizontal_offset_padding , extents[1] + rules_vertical_offset_padding )
+    extents = pdb.gimp_text_get_extents_fontname(text, rules_text_fontsize, PIXELS, rules_text_font)
+    line_height = extents[1]
+    num_lines = len(text) / 90 + 2
+    pdb.gimp_text_layer_resize(rules_text_layer, 1200, line_height * num_lines)
+    pdb.gimp_text_layer_set_text(rules_text_layer, text)
+    # remove the background layer
+    # merge text layers together
+    pdb.gimp_image_merge_visible_layers(temp_image, CLIP_TO_IMAGE)
+    # autocrop the back ground layer
+    pdb.plug_in_autocrop(temp_image, temp_image.layers[0])
+
+    background_x = 140
     # copy the entire layer into the tempalte
     item_copy = pdb.gimp_layer_new_from_drawable(temp_image.layers[0], template)
     # save the height of the layer to be returned later
@@ -103,11 +130,12 @@ def addRulesText(template, title, text, background_y):
     pdb.gimp_image_insert_layer(template, item_copy, None, 0)
     # set the offsets
     pdb.gimp_layer_set_offsets(item_copy, background_x, background_y)
-    # merge the new layer down into the tempalte
+    # merge the new layer down into the template
     pdb.gimp_image_merge_down(template, item_copy, CLIP_TO_IMAGE)
     # clean up the temp image we created
     pdb.gimp_image_delete(temp_image)
     # return height for later layers
+    logProcessing('Complete! ' + title + ': ' + str(background_y + height), text)
     return height
 
 def generate_images_from_template(image, drawable, filename, append, outdirectory):
@@ -136,7 +164,8 @@ def generate_images_from_template(image, drawable, filename, append, outdirector
     f.close()
 
     weapon_y_offset = 0
-
+    maxCards = 0
+    cardCount = 0
     # open the input
     with open(filename, "r") as f:
         logProcessing(filename, "Reading input file")
@@ -147,6 +176,9 @@ def generate_images_from_template(image, drawable, filename, append, outdirector
         # for each record past the header line
         record = f.readline()
         while record != '':
+            cardCount += 1
+            if cardCount > int(maxCards) and maxCards > 0:
+                break
             try:
                 values = record.split('\t')
                 # duplicate the template image
@@ -157,6 +189,8 @@ def generate_images_from_template(image, drawable, filename, append, outdirector
                 logProcessing(values[0], "Processing started")
                 x = 115
                 y = 604
+                abilityTitle = ''
+                current_y = 118
 
                 for layerName in headerLine.split('\t'):
                     # find the matching layer
@@ -167,123 +201,136 @@ def generate_images_from_template(image, drawable, filename, append, outdirector
                     # if it's a text layer
                     #if layerName[0] == 'W' or layerName[0] == 'w':
     #                    pdb.gimp_message(layerName + ' - ' + value)
-                    if layerName.strip()[:6] == 'Weapon' and append != '-Back':
+                    if append == '-Back':
+                        if layerName == 'Ability1Title':
+                            abilityTitle = value
+                        elif layerName == 'Ability2Title':
+                            abilityTitle = value
+                        elif layerName == 'Ability1Text' or layerName == 'Ability2Text':
+                            current_y += addRulesText(duplicate,abilityTitle, value, current_y) + 20
+                    else:
+                        if layerName.strip()[:6] == 'Weapon' and append != '-Back':
 
-                        template = pdb.gimp_xcf_load(0, 'C:\Users\u0064666\Pictures\Cards\Templates\\WeaponTemplate.xcf', 'C:\Users\u0064666\Pictures\Cards\Templates\\WeaponTemplate.xcf')
-                        weapon = None
+                            template = pdb.gimp_xcf_load(0, 'C:\Users\u0064666\Pictures\Cards\Templates\\WeaponTemplate.xcf', 'C:\Users\u0064666\Pictures\Cards\Templates\\WeaponTemplate.xcf')
+                            weapon = None
 
-                        for w in weapons:
-                           if w.get('name', '') == value:
-                                weapon = w
-                                break
+                            for w in weapons:
+                               if w.get('name', '') == value:
+                                    weapon = w
+                                    break
 
-                        if weapon != None:
-                            ## build weapon template
-                            layer = pdb.gimp_image_get_layer_by_name(template, 'Name')
-                            setTextLayerValue(layer, weapon.get('name', ''))
+                            if weapon != None:
+                                ## build weapon template
+                                layer = pdb.gimp_image_get_layer_by_name(template, 'Name')
+                                setTextLayerValue(layer, weapon.get('name', ''))
 
-                            layer = pdb.gimp_image_get_layer_by_name(template, 'Burst')
-                            setTextLayerValue(layer, weapon.get('burst', ''))
+                                layer = pdb.gimp_image_get_layer_by_name(template, 'Burst')
+                                setTextLayerValue(layer, weapon.get('burst', ''))
 
-                            layer = pdb.gimp_image_get_layer_by_name(template, 'Damage')
-                            setTextLayerValue(layer, weapon.get('damage', ''))
+                                layer = pdb.gimp_image_get_layer_by_name(template, 'Damage')
+                                setTextLayerValue(layer, weapon.get('damage', ''))
 
-                            layer = pdb.gimp_image_get_layer_by_name(template, 'Ammo')
-                            setTextLayerValue(layer, weapon.get('ammo', ''))
+                                layer = pdb.gimp_image_get_layer_by_name(template, 'Ammo')
+                                setTextLayerValue(layer, weapon.get('ammo', ''))
 
-                            layer = pdb.gimp_image_get_layer_by_name(template, 'Rules')
-                            notes = ''
-                            if weapon['cc'] == 'Yes':
-                                notes = notes + 'CC '
-                            if weapon['template'] != 'No':
-                                notes = notes + weapon['template'] + ' '
-                            if weapon['em_vul'] == 'Yes':
-                                notes = notes + 'EM '
+                                layer = pdb.gimp_image_get_layer_by_name(template, 'Rules')
+                                notes = ''
+                                if weapon['cc'] == 'Yes':
+                                    notes = notes + 'CC '
+                                if weapon['template'] != 'No':
+                                    notes = notes + weapon['template'] + ' '
+                                if weapon['em_vul'] == 'Yes':
+                                    notes = notes + 'EM '
 
-                            notes = notes + weapon.get('note', '')
-                            setTextLayerValue(layer, notes)
+                                notes = notes + weapon.get('note', '')
+                                setTextLayerValue(layer, notes)
 
-                            ##range bands
+                                ##range bands
 
-                            dist = weapon['short_dist']
-                            if dist != '--':
-                                mod = weapon['short_mod']
-                                bandMin = 1
-                                bandMax = rangeBands[dist]
-                                modValue = int(mod)
-                                drawRangeBand(template, bs, modValue, bandMin, bandMax)
+                                dist = weapon['short_dist']
+                                if dist != '--':
+                                    mod = weapon['short_mod']
+                                    bandMin = 1
+                                    bandMax = rangeBands[dist]
+                                    modValue = int(mod)
+                                    drawRangeBand(template, bs, modValue, bandMin, bandMax)
 
-                            dist = weapon['medium_dist']
-                            if dist != '--':
-                                mod = weapon['medium_mod']
-                                bandMin = bandMax + 1
-                                bandMax = rangeBands[dist]
-                                modValue = int(mod)
-                                drawRangeBand(template, bs, modValue, bandMin, bandMax)
+                                dist = weapon['medium_dist']
+                                if dist != '--':
+                                    mod = weapon['medium_mod']
+                                    bandMin = bandMax + 1
+                                    bandMax = rangeBands[dist]
+                                    modValue = int(mod)
+                                    drawRangeBand(template, bs, modValue, bandMin, bandMax)
 
-                            dist = weapon['long_dist']
-                            if dist != '--':
-                                mod = weapon['long_mod']
-                                bandMin = bandMax + 1
-                                bandMax = rangeBands[dist]
-                                modValue = int(mod)
-                                drawRangeBand(template, bs, modValue, bandMin, bandMax)
+                                dist = weapon['long_dist']
+                                if dist != '--':
+                                    mod = weapon['long_mod']
+                                    bandMin = bandMax + 1
+                                    bandMax = rangeBands[dist]
+                                    modValue = int(mod)
+                                    drawRangeBand(template, bs, modValue, bandMin, bandMax)
 
-                            dist = weapon['max_dist']
-                            if dist != '--':
-                                mod = weapon['max_mod']
-                                bandMin = bandMax + 1
-                                bandMax = rangeBands[dist]
-                                modValue = int(mod)
-                                drawRangeBand(template, bs, modValue, bandMin, bandMax)
+                                dist = weapon['max_dist']
+                                if dist != '--':
+                                    mod = weapon['max_mod']
+                                    bandMin = bandMax + 1
+                                    bandMax = rangeBands[dist]
+                                    modValue = int(mod)
+                                    drawRangeBand(template, bs, modValue, bandMin, bandMax)
 
 
-                            layer = pdb.gimp_image_merge_visible_layers(template, CLIP_TO_IMAGE)
+                                layer = pdb.gimp_image_merge_visible_layers(template, CLIP_TO_IMAGE)
 
-                            item_copy = pdb.gimp_layer_new_from_drawable(layer, duplicate)
-                            pdb.gimp_image_insert_layer(duplicate, item_copy, None, 0)
-                            pdb.gimp_layer_set_offsets(item_copy, x, y)
-                            y = y + item_copy.height
+                                item_copy = pdb.gimp_layer_new_from_drawable(layer, duplicate)
+                                pdb.gimp_image_insert_layer(duplicate, item_copy, None, 0)
+                                pdb.gimp_layer_set_offsets(item_copy, x, y)
+                                y = y + item_copy.height
 
-                            pdb.gimp_image_merge_down(duplicate, item_copy, CLIP_TO_IMAGE)
+                                pdb.gimp_image_merge_down(duplicate, item_copy, CLIP_TO_IMAGE)
 
-                        pdb.gimp_image_delete(template)
-                    elif layer == None:
-                        #pdb.gimp_message("[" + layerName + "] could not be found")
-                        badlayer = 0
-                    elif pdb.gimp_drawable_is_text_layer(layer) == 1:
-                        # replace the text of the text layer with the matching value in the current record
-                        font = pdb.gimp_text_layer_get_font(layer)
-                        size = pdb.gimp_text_layer_get_font_size(layer)
-                        extents = pdb.gimp_text_get_extents_fontname(value, size[0], PIXELS, font)
-                        #if extents[0] > layer.width or extents[1] > layer.height:
-                         #   fontsize = calculate_font_size(value, font, layer.width, layer.height)
-                          #  pdb.gimp_text_layer_set_font_size(layer, fontsize, PIXELS)
-                        pdb.gimp_text_layer_set_text(layer, value)
-                    elif len(value) > 0:
-                        # if not a text layer
-                        try:
-                            imgFromDisk = pdb.gimp_file_load_layer(duplicate, value)
-                            # copy the image from disk to the image
-                            pdb.gimp_image_insert_layer(duplicate, imgFromDisk, None, 0)
-                            # resize the image to the layer size
-                            pdb.gimp_layer_scale(imgFromDisk, layer.width, layer.height, FALSE)
-                            # set the new layer's position to overlay the positional layer
-                            pdb.gimp_layer_set_offsets(imgFromDisk, layer.offsets[0], layer.offsets[1])
-                        except:
-                            logError(None, "Failed to process image data for + " + value)
-                            pass
+                            pdb.gimp_image_delete(template)
+                        elif layer == None:
+                            #pdb.gimp_message("[" + layerName + "] could not be found")
+                            badlayer = 0
+                        elif pdb.gimp_drawable_is_text_layer(layer) == 1:
+                            # replace the text of the text layer with the matching value in the current record
+                            font = pdb.gimp_text_layer_get_font(layer)
+                            size = pdb.gimp_text_layer_get_font_size(layer)
+                            extents = pdb.gimp_text_get_extents_fontname(value, size[0], PIXELS, font)
+                            #if extents[0] > layer.width or extents[1] > layer.height:
+                             #   fontsize = calculate_font_size(value, font, layer.width, layer.height)
+                              #  pdb.gimp_text_layer_set_font_size(layer, fontsize, PIXELS)
+                            pdb.gimp_text_layer_set_text(layer, value)
+                        elif len(value) > 0:
+                            # if not a text layer
+                            try:
+                                imgFromDisk = pdb.gimp_file_load_layer(duplicate, value)
+                                # copy the image from disk to the image
+                                pdb.gimp_image_insert_layer(duplicate, imgFromDisk, None, 0)
+                                # resize the image to the layer size
+                                pdb.gimp_layer_scale(imgFromDisk, layer.width, layer.height, FALSE)
+                                # set the new layer's position to overlay the positional layer
+                                pdb.gimp_layer_set_offsets(imgFromDisk, layer.offsets[0], layer.offsets[1])
+                            except:
+                                logError(None, "Failed to process image data for " + value)
+                                pass
 
-                    if layerName == 'BSValue':
-                        try:
-                            bs = int(value)
-                        except Exception as e:
-                            logError(e, values[0])
-                            pass
+                        if layerName == 'BSValue':
+                            try:
+                                bs = int(value)
+                            except Exception as e:
+                                logError(e, values[0])
+                                pass
 
                     index = index + 1
                 # write the duplicate to disk
-                #pdb.gimp_image_scale(duplicate, 500, 300)
+                # width = 4.25" * 500 pixels per inch
+                scaled_width = 3.66
+                width = scaled_width * 500
+                # height =  3" *
+                height = 3 * ( scaled_width / 5) * 500
+                pdb.gimp_image_scale(duplicate, width, height)
                 merged = pdb.gimp_image_merge_visible_layers(duplicate, CLIP_TO_IMAGE)
                 logProcessing(values[0], "Writing PNG")
                 #pdb.gimp_image_set_resolution(duplicate, 500, 500)
@@ -302,12 +349,13 @@ register(
         "Michael Pickens",
         "Michael Pickens",
         "2013",
-        "<Image>/_Xtns/_Generate Images from Template",
+        "<Image>/_Infinity/_Generate Images from Template",
         "RGB*, GRAY*",
         [
                 (PF_STRING, "filename", "Source File", "exmaple.dat"),
                 (PF_STRING, "append", "Append To FileName", ""),
                 (PF_STRING, "outdirectory", "Destination directory", ""),
+
         ],
         [],
         generate_images_from_template)
