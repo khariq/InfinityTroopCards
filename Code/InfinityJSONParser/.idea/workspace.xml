@@ -4,7 +4,7 @@
     <list default="true" id="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" name="Default" comment="" />
     <ignored path="InfinityJSONParser.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/jsonReader.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377872112759" ignored="false" />
+    <file path="/jsonReader.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379088760696" ignored="false" />
     <file path="/ariadna.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377537599525" ignored="false" />
     <file path="/decoder.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377536410472" ignored="false" />
     <file path="/yujing.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377633458062" ignored="false" />
@@ -19,9 +19,11 @@
     <file path="$PROJECT_DIR$/../CBImageSpider/spider.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377671359965" ignored="false" />
     <file path="$PROJECT_DIR$/../CBImageSpider/ReadFaction.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377696696312" ignored="false" />
     <file path="/ReadFaction.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377696551504" ignored="false" />
-    <file path="/fragment.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377808990377" ignored="false" />
-    <file path="/duplicate_from_template.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377891615352" ignored="false" />
+    <file path="/fragment.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379080939212" ignored="false" />
+    <file path="/duplicate_from_template.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379092001188" ignored="false" />
     <file path="/rules.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377720501675" ignored="false" />
+    <file path="/tohaa_symbiont.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379085420774" ignored="false" />
+    <file path="/sectorials.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379086978980" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,52 +46,7 @@
       <file leaf-file-name="jsonReader.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jsonReader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="177" column="56" selection-start="6767" selection-end="6774" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="weapons.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/Other/weapons.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="323" column="18" selection-start="5781" selection-end="5781" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ariadna.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data/ariadna.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2005" column="0" selection-start="28698" selection-end="28698" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="rules.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Data/Other/rules.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="69" column="1732" selection-start="61336" selection-end="61338" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="decoder.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://C:/Python27/Lib/json/decoder.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="380" column="0" selection-start="13718" selection-end="13718" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="aleph.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/aleph.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1257" column="6" selection-start="18151" selection-end="18154" vertical-scroll-proportion="0.0">
+            <state line="104" column="0" selection-start="3317" selection-end="3317" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -98,19 +55,52 @@
       <file leaf-file-name="duplicate_from_template.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="57" column="34" selection-start="1662" selection-end="1662" vertical-scroll-proportion="1.1293706">
+            <state line="264" column="16" selection-start="10633" selection-end="10633" vertical-scroll-proportion="0.05483871">
               <folding>
-                <element signature="e#22#42#0" expanded="true" />
+                <element signature="e#5404#8584#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="nomads.json" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/nomads.json">
+      <file leaf-file-name="sectorials.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sectorials.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="13" column="10" selection-start="223" selection-end="223" vertical-scroll-proportion="-3.3333333">
+            <state line="17" column="31" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0">
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tohaa_symbiont.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tohaa_symbiont.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="33" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sectorials.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/Other/sectorials.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="713" column="0" selection-start="10419" selection-end="10419" vertical-scroll-proportion="-5.230769">
+              <folding>
+                <element signature="e#3#1604#0" expanded="false" />
+                <element signature="e#1607#2822#0" expanded="false" />
+                <element signature="e#2825#4367#0" expanded="false" />
+                <element signature="e#4370#5856#0" expanded="false" />
+                <element signature="e#5859#7078#0" expanded="false" />
+                <element signature="e#7081#8726#0" expanded="false" />
+                <element signature="e#8729#10417#0" expanded="false" />
+                <element signature="e#10420#12188#0" expanded="false" />
+                <element signature="e#12191#13835#0" expanded="false" />
+                <element signature="e#13838#15356#0" expanded="false" />
+                <element signature="e#15359#16666#0" expanded="false" />
+                <element signature="e#16669#18380#0" expanded="false" />
+                <element signature="e#18383#19433#0" expanded="false" />
+                <element signature="e#19436#20766#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -125,11 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Data/merc.json" />
-        <option value="$PROJECT_DIR$/Data/other.json" />
-        <option value="$PROJECT_DIR$/Data/tohaa.json" />
-        <option value="$PROJECT_DIR$/Data/aleph.json" />
-        <option value="$USER_HOME$/AppData/Local/Temp/aleph.json" />
         <option value="$PROJECT_DIR$/Data/combined.json" />
         <option value="$PROJECT_DIR$/Data/haqq.json" />
         <option value="$PROJECT_DIR$/Data/nomads.json" />
@@ -139,16 +124,20 @@
         <option value="$PROJECT_DIR$/Data/wiki.txt" />
         <option value="$PROJECT_DIR$/Data/rules.json" />
         <option value="$PROJECT_DIR$/Data/Other/rules.json" />
+        <option value="C:/Python Projects/InfinityJSONParser/jsonReader.py" />
+        <option value="$USER_HOME$/.gimp-2.8/plug-ins/make_card_grid.py" />
+        <option value="$PROJECT_DIR$/Data/tohaa.json" />
+        <option value="$PROJECT_DIR$/tohaa_symbiont.py" />
+        <option value="$PROJECT_DIR$/sectorials.py" />
         <option value="$PROJECT_DIR$/jsonReader.py" />
         <option value="$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1936" />
-    <option name="height" value="1056" />
+    <option name="x" value="-9" />
+    <option name="width" value="1616" />
+    <option name="height" value="1176" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -176,6 +165,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -194,29 +184,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InfinityJSONParser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="InfinityJSONParser" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Data" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/nomads.json" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py" />
     <property name="restartRequiresConfirmation" value="true" />
     <property name="FullScreen" value="false" />
   </component>
@@ -310,8 +285,10 @@
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/jsonReader.py" />
       <option name="PARAMETERS" value="" />
       <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonCover" />
       <RunnerSettings RunnerId="PythonRunner" />
       <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonCover" />
       <ConfigurationWrapper RunnerId="PythonRunner" />
       <method />
     </configuration>
@@ -329,18 +306,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-9" y="0" width="1616" height="1176" extended-state="0" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.14727855" sideWeight="0.6705998" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39921337" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15508366" sideWeight="0.6712463" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39842984" sideWeight="0.7245817" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32940018" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875368" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -410,107 +387,121 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="12" />
+      <option name="time" value="23" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Data/nomads.json">
+    <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/nomads.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="12" selection-start="46" selection-end="54" vertical-scroll-proportion="-0.67105263" />
+        <state line="13" column="10" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/tohaa.json">
+    <entry file="file://C:/Python Projects/InfinityJSONParser/jsonReader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="16" selection-start="1858" selection-end="1863" vertical-scroll-proportion="-17.653847" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/yujing.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="330" column="12" selection-start="5286" selection-end="5286" vertical-scroll-proportion="-5.392157" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Other/wiki.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="32" selection-start="418" selection-end="433" vertical-scroll-proportion="-13.076923" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/wiki.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="451362" selection-start="663" selection-end="452017" vertical-scroll-proportion="0.24335378" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/py-test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="39" selection-start="58" selection-end="83" vertical-scroll-proportion="0.051463168" />
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1126" column="26" selection-start="47078" selection-end="47078" vertical-scroll-proportion="0.42051283" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/json/decoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="380" column="0" selection-start="13718" selection-end="13718" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="29" column="434" selection-start="888" selection-end="1322" vertical-scroll-proportion="0.2883721" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/aleph.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1257" column="6" selection-start="18151" selection-end="18154" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="1257" column="6" selection-start="18151" selection-end="18154" vertical-scroll-proportion="0.026898734" />
+      </provider>
+    </entry>
+    <entry file="file://C:/Python27/Lib/json/decoder.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="380" column="0" selection-start="13718" selection-end="13718" vertical-scroll-proportion="0.74164134" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/Other/rules.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="69" column="1732" selection-start="61336" selection-end="61338" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="69" column="1732" selection-start="61336" selection-end="61338" vertical-scroll-proportion="0.02746365" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/ariadna.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2005" column="0" selection-start="28698" selection-end="28698" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Pictures/Cards/Data/ariadna.dat">
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="244" selection-start="516" selection-end="516" vertical-scroll-proportion="-1.36" />
+        <state line="2005" column="0" selection-start="28698" selection-end="28698" vertical-scroll-proportion="0.026898734" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/Other/weapons.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="323" column="18" selection-start="5781" selection-end="5781" vertical-scroll-proportion="0.0">
+        <state line="323" column="18" selection-start="5781" selection-end="5781" vertical-scroll-proportion="0.026898734" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/make_card_grid.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="25" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Other/weapons.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1233" column="18" selection-start="22000" selection-end="22000" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1119" column="53" selection-start="46753" selection-end="46753" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/tohaa.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="284" column="16" selection-start="4137" selection-end="4137" vertical-scroll-proportion="0.8181818">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tohaa_symbiont.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="33" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Other/sectorials.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="713" column="0" selection-start="10419" selection-end="10419" vertical-scroll-proportion="-5.230769">
+          <folding>
+            <element signature="e#3#1604#0" expanded="false" />
+            <element signature="e#1607#2822#0" expanded="false" />
+            <element signature="e#2825#4367#0" expanded="false" />
+            <element signature="e#4370#5856#0" expanded="false" />
+            <element signature="e#5859#7078#0" expanded="false" />
+            <element signature="e#7081#8726#0" expanded="false" />
+            <element signature="e#8729#10417#0" expanded="false" />
+            <element signature="e#10420#12188#0" expanded="false" />
+            <element signature="e#12191#13835#0" expanded="false" />
+            <element signature="e#13838#15356#0" expanded="false" />
+            <element signature="e#15359#16666#0" expanded="false" />
+            <element signature="e#16669#18380#0" expanded="false" />
+            <element signature="e#18383#19433#0" expanded="false" />
+            <element signature="e#19436#20766#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sectorials.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="31" selection-start="368" selection-end="368" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jsonReader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="177" column="56" selection-start="6767" selection-end="6774" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/nomads.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="10" selection-start="223" selection-end="223" vertical-scroll-proportion="-3.3333333">
+        <state line="104" column="0" selection-start="3317" selection-end="3317" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="57" column="34" selection-start="1662" selection-end="1662" vertical-scroll-proportion="1.1293706">
+        <state line="264" column="16" selection-start="10633" selection-end="10633" vertical-scroll-proportion="0.05483871">
           <folding>
-            <element signature="e#22#42#0" expanded="true" />
+            <element signature="e#5404#8584#0" expanded="false" />
           </folding>
         </state>
       </provider>

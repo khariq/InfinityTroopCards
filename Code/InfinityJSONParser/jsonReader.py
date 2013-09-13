@@ -3,12 +3,15 @@ import decoder
 __author__ = 'u0064666'
 
 import json
+import tohaa_symbiont
+import sectorials
 
-rootOutputPath = "C:\Users\u0064666\Pictures\Cards\Data\\"
-pathToIcons = "C:\\Users\\u0064666\\Pictures\\Cards\\ImagesFromCB\\"
-pathToRegularIcon = "C:\\Users\\u0064666\\Pictures\\Cards\\ImagesFromCB\\Regular.png"
-pathToIrregularIcon = "C:\\Users\\u0064666\\Pictures\\Cards\\ImagesFromCB\\Irregular.png"
-pathToImpetuousIcon = "C:\\Users\\u0064666\\Pictures\\Cards\\ImagesFromCB\\Impetuous.png"
+rootDirectory = 'C:\Users\u0064666\Documents\GitHub\InfinityTroopCards\\'
+rootOutputPath = rootDirectory + 'Data\\'
+pathToIcons = rootDirectory + 'ImagesFromCB\\'
+pathToRegularIcon = pathToIcons + 'Regular.png'
+pathToIrregularIcon = pathToIcons + 'Irregular.png'
+pathToImpetuousIcon = pathToIcons + 'Impetuous.png'
 iconDirectoryMap = {
     "Panoceania": "PanO",
     "Yu Jing": "YuJing",
@@ -26,7 +29,7 @@ rules = {}
 weaponData = {}
 blankWeaponString = '\t'
 weaponHeader = 'W1SValue\tW1MValue\tW1LValue\tW1MaxValue\tW1DmgValue\tW1BValue\tW1AmmoValue\tW1SpecialValue'
-header= 'UnitNameValue\tUnitIcon\tUnitPortrait\tTrainingIcon\tImpIcon\tMOVValue\tCCValue\tBSValue\tPHValue\tWIPValue\tARMValue\tBTSValue\tWValue\tAVAValue\tSWCCost\tUnitCost\tUnitNotesValue\tAbility1Title\tAbility1Text\tAbility2Title\tAbility2Text\tWeapon1Value\tWeapon2Value\tWeapon3Value\tWeapon4Value\tWeapon5Value'
+header= 'UnitNameValue\tUnitIcon\tUnitPortrait\tTrainingIcon\tImpIcon\tSectorialSymbol\tSectorialAVA\tSectorialLinkable\tMOVValue\tCCValue\tBSValue\tPHValue\tWIPValue\tARMValue\tBTSValue\tWValue\tAVAValue\tSWCCost\tUnitCost\tUnitNotesValue\tAbility1Title\tAbility1Text\tAbility2Title\tAbility2Text\tAbility3Title\tAbility3Text\tAbility4Title\tAbility4Text\tAbility5Title\tAbility5Text\tAbility6Title\tAbility6Text\tWeapon1Value\tWeapon2Value\tWeapon3Value\tWeapon4Value\tWeapon5Value\tInactiveMOVValue\tInactiveCCValue\tInactiveBSValue\tInactivePHValue\tInactiveWIPValue\tInactiveARMValue\tInactiveBTSValue\tInactiveWValue'
 currentISC = 'null'
 fout = None
 
@@ -68,17 +71,34 @@ def writeImagePaths(dict):
     return line
 
 
+def writeSectorial(dict):
+    isc = dict.get('isc', '')
+    if isc in sectorials.Sectorials:
+        sectorial_unit = sectorials.Sectorials[isc]
+        line = ''
+        line += sectorial_unit[0] + '\t'
+        line += sectorial_unit[2] + '\t'
+        if sectorial_unit[1] is True:
+            line += 'Yes'
+        else:
+            line += 'No'
+        line += '\t'
+        return line
+    else:
+        return '\t\t\t'
+
+
 def writeStatLine(dict):
     line = ''
-    line += dict['mov'] + '\t'
-    line += dict['cc'] + '\t'
-    line += dict['bs'] + '\t'
-    line += dict['ph'] + '\t'
-    line += dict['wip'] + '\t'
-    line += dict['arm'] + '\t'
-    line += dict['bts'] + '\t'
-    line += dict['w'] + '\t'
-    line += dict['ava'] + '\t'
+    line += dict.get('mov', '') + '\t'
+    line += dict.get('cc',  '') + '\t'
+    line += dict.get('bs',  '') + '\t'
+    line += dict.get('ph',  '') + '\t'
+    line += dict.get('wip', '') + '\t'
+    line += dict.get('arm', '') + '\t'
+    line += dict.get('bts', '') + '\t'
+    line += dict.get('w',   '') + '\t'
+    line += dict.get('ava', '') + '\t'
 
     return line
 
@@ -101,34 +121,16 @@ def writeAbilities(dict, loadout):
     else:
         printLine = line + '\t'
 
-    ability1 = ''
-    ability2 = ''
-    ability1_frequency = 99999
-    ability2_frequency = 99999
     count = 0
     for ability in abilities.split(','):
-        if ability.strip() in rules:
-            freq = 99999
-            for a in decoder.rules_frequency:
-                if a[0] == ability.strip():
-                    freq = a[1]
-                    break
+        printLine += ability + '\t' + rules.get(ability.strip(), '') + '\t'
+        count += 1
+        if count > 5:
+            break
 
-            if freq < ability1_frequency:
-                ability1 = ability
-                ability1_frequency = freq
-            elif freq < ability2_frequency:
-                ability2 = ability
-                ability2_frequency = freq
-
-    if len(ability1) > 0:
-        printLine += ability1 + '\t' + rules.get(ability1.strip(), '') + '\t'
-    else:
+    while count < 6:
         printLine += '\t\t'
-    if len(ability2) > 0:
-        printLine += ability2 + '\t' + rules.get(ability2.strip(), '') + '\t'
-    else:
-        printLine += '\t\t'
+        count += 1
 
     return printLine
 
@@ -186,7 +188,7 @@ def unit(dict):
             types = dict['childs']
 
             line += writeImagePaths(dict)
-
+            line += writeSectorial(dict)
             line += writeStatLine(dict)
 
             for t in types:
@@ -203,6 +205,11 @@ def unit(dict):
 
                 printLine += writeWeapons(dict, t)
 
+                if 'altp' in dict and 'spec' in dict and 'Symbiont Armour' in dict['spec']:
+                    printLine += writeStatLine(tohaa_symbiont.SymbiontArmors[dict['name']])
+                else:
+                    printLine += writeStatLine({})
+
                 printLine += "\r\n"
 
                 print printLine
@@ -210,6 +217,7 @@ def unit(dict):
 
     if 'code' in dict:
         return dict
+
 
 def weapon(dict):
     line = ""
@@ -224,11 +232,11 @@ def weapon(dict):
     line += dict['ammo'] + '\t'
     notes = ""
     if dict['cc'] == 'Yes':
-        notes = notes + 'CC '
+        notes += 'CC '
     if dict['template'] != 'No':
-        notes = notes + dict['template'] + ' '
+        notes += dict['template'] + ' '
     if dict['em_vul'] == 'Yes':
-        notes = notes + 'EM '
+        notes += 'EM '
 
     notes = notes + dict.get('note', '')
     line += notes + '\t'
@@ -236,8 +244,8 @@ def weapon(dict):
     weaponData[dict['name']] = line
     weaponData[dict['name'] + ' (2)'] = line
 
-def rulesAndEquipment(dict):
 
+def rulesAndEquipment(dict):
     if dict.get('data', '') != '':
         rules[dict.get('name', '')] = dict.get('data', '')
 
@@ -246,14 +254,18 @@ def runFile(name, army):
     global fout
     fout = open(rootOutputPath + army + ".dat", "w")
     fout.write(header + "\r\n")
-    f = open("C:\\Python Projects\\InfinityJSONParser\\Data\\" + name, "r")
+    rootDirectory + 'Code\InfinityJSONParser\Data\\'
+    f = open(rootDirectory + 'Code\InfinityJSONParser\Data\\' + name, "r")
     data = json.load(f, object_hook=unit)
 
-f = open("C:\\Python Projects\\InfinityJSONParser\\Data\\Other\\weapons.json", "r")
+f = open(rootDirectory + 'Code\InfinityJSONParser\Data\Other\weapons.json', "r")
 json.load(f, object_hook=weapon)
 
-f = open("C:\\Python Projects\\InfinityJSONParser\\Data\\Other\\rules.json", "r")
+f = open(rootDirectory + 'Code\InfinityJSONParser\Data\Other\\rules.json', "r")
 json.load(f, object_hook=rulesAndEquipment)
+
+tohaa_symbiont.parseTohaa(rootDirectory)
+sectorials.parseSectorials(rootDirectory)
 
 decoder.count_rules_frequency()
 
