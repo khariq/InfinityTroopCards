@@ -102,7 +102,7 @@
   "medium_dist": "32",
   "medium_mod": "3",
   "name": "Akrylat-Kanone",
-  "note": "2 Uses",
+  "note": "2",
   "short_dist": "8",
   "short_mod": "0",
   "template": "No"
@@ -626,7 +626,7 @@
   "em_vul": "Yes",
   "long_dist": "48",
   "long_mod": "-3",
-  "max_dist": "99",
+  "max_dist": "96",
   "max_mod": "-6",
   "medium_dist": "32",
   "medium_mod": "0",
@@ -1647,7 +1647,7 @@
   "medium_dist": "32",
   "medium_mod": "3",
   "name": "Flammenspeer",
-  "note": "2 Uses",
+  "note": "2",
   "short_dist": "8",
   "short_mod": "0",
   "template": "Circular"

@@ -13,6 +13,12 @@ def logError(exception, record_name):
         errOut = open(rootDirectory + 'renderErrors.txt', 'w')
     errOut.write("[" + record_name +"]: " + str(exception) + "\r\n")
 
+def logErrorP(record_name, msg):
+    global errOut
+    if errOut is None:
+        errOut = open(rootDirectory + 'renderErrors.txt', 'w')
+    errOut.write("[" + record_name + "]: " + msg + "\r\n")
+
 def logProcessing(record_name, msg):
     global logOut
     if logOut is None:
@@ -121,8 +127,8 @@ def addRulesText(template, title, text, background_y):
     # return height for later layers
     return height
 
-def addWeapon(image, value, y, weapons, bs, ph):
-    logProcessing(value, 'Weapon processing starting')
+def addWeapon(image, value, y, weapons, bs, ph, wip, xvisor):
+    logProcessing(value, 'Weapon processing starting: (' + str(bs) + ',' + str(ph) + ',' + str(wip) + ')')
     template = pdb.gimp_xcf_load(0, rootDirectory + 'Templates\WeaponTemplate.xcf', rootDirectory + 'Templates\WeaponTemplate.xcf')
     logProcessing(value, 'Template loaded')
 
@@ -143,15 +149,31 @@ def addWeapon(image, value, y, weapons, bs, ph):
         "104": 12
     }
 
+    multipleWeapons = False
+    i = value.find('(2)')
+    if i >= 0:
+        value = value[:i]
+        multipleWeapons = True
+
+    i = value.find('2')
+    if i == 0:
+        value = value[i+1:]
+        multipleWeapons = True
+
+    value = value.strip()
     for w in weapons:
        if w.get('name', '') == value:
             weapon = w
             break
+
     logProcessing(value, 'Dictionary Lookup complete: ' + str(weapon is not None))
     if weapon is not None:
         ## build weapon template
         layer = pdb.gimp_image_get_layer_by_name(template, 'Name')
-        setTextLayerValue(layer, weapon.get('name', ''))
+        if multipleWeapons:
+            setTextLayerValue(layer, weapon.get('name', '') + ' (2)')
+        else:
+            setTextLayerValue(layer, weapon.get('name', ''))
 
         layer = pdb.gimp_image_get_layer_by_name(template, 'Burst')
         setTextLayerValue(layer, weapon.get('burst', ''))
@@ -170,18 +192,30 @@ def addWeapon(image, value, y, weapons, bs, ph):
             notes += weapon['template'] + ' '
         if weapon['em_vul'] == 'Yes':
             notes += 'EM '
+        if int(weapon.get('uses', '0')) > 0:
+            notes += 'Uses: ' + weapon.get('uses') + ' '
 
         notes = notes + weapon.get('note', '')
         setTextLayerValue(layer, notes)
         logProcessing(value, 'Text Layers Set')
         ##range bands
+        logProcessing(value, 'Selecting attribute (' + str(value.find('Grenade')) + ',' + str(value.find('Forward Observer')) + ',' + str(value.find('Flash Pulse')) + ')')
         attribute = bs
-        if weapon.get('name', '').find('Grenade') > 0:
+        if value.find('Grenade') >= 0:
+            logProcessing(value, 'Selecting PH (' + str(ph) + ') attribute')
             attribute = ph
+
+        if value.find('Forward Observer') >= 0:
+            logProcessing(value, 'Selecting WIP (' + str(wip) + ') attribute')
+            attribute = wip
+
+        if value.find('Flash Pulse') >= 0:
+            logProcessing(value, 'Selecting WIP (' + str(wip) + ') attribute')
+            attribute = wip
 
         bandMin = 1
         for key in ['short', 'medium','long','max']:
-            logProcessing(key, 'Calculating range band')
+            logProcessing(value, key + ' Calculating range band')
             logProcessing(value, weapon['short_dist'] + ' / ' + weapon['short_mod'])
             dist = weapon[(key + '_dist')]
             logProcessing(key, dist)
@@ -189,9 +223,16 @@ def addWeapon(image, value, y, weapons, bs, ph):
                 mod = weapon[key + '_mod']
                 logProcessing(key, mod)
                 bandMax = rangeBands[dist]
-                logProcessing(key, str(bandMin) + ' - ' + str(bandMax))
+                logProcessing(value, key +' ' + str(bandMin) + ' - ' + str(bandMax))
                 modValue = int(mod)
-                logProcessing(key, 'Drawing range band')
+
+                if xvisor is True:
+                    if key == 'long' and modValue < 0:
+                        modValue = 0
+                    if key == 'max' and modValue < -3:
+                        modValue = -3
+
+                logProcessing(value, key + ' Drawing range band')
                 drawRangeBand(template, attribute, modValue, bandMin, bandMax)
                 bandMin = bandMax + 1
                 logProcessing(value, key + ' Range Band drawn')
@@ -204,7 +245,8 @@ def addWeapon(image, value, y, weapons, bs, ph):
         y = y + item_copy.height
         logProcessing(value, 'Template Layers merged to image')
         pdb.gimp_image_merge_down(image, item_copy, CLIP_TO_IMAGE)
-
+    else:
+        logErrorP(value, 'Weapon not found')
     logProcessing(value, 'Weapon processing complete')
     pdb.gimp_image_delete(template)
     return y
@@ -270,8 +312,7 @@ def generate_images_from_template(image, drawable, filename, append, outdirector
         # read the header line to get the names of the layers
         headerLine = f.readline()
         #(UnitNameValue UnitIcon UnitPortrait MOVValue CCValue BSValue PHValue WIPValue ARMValue BTSValue WValue AVAValue SWCCost UnitCost UnitNotesValue Ability1Title Ability1Text Ability2Title Ability2Text Weapon1Value W1SValue W1MValue W1LValue W1MaxValue W1DmgValue W1BValue W1AmmoValue W1SpecialValue Weapon2Value W2SValue W2MValue W2LValue W2MaxValue W2DmgValue W2BValue W2AmmoValue W2SpecialValue Weapon3Value W3SValue W3MValue W3LValue W3MaxValue W3DmgValue W3BValue W3AmmoValue W3SpecialValue Weapon4Value W4SValue W4MValue W4LValue W4MaxValue W4DmgValue W4BValue W4AmmoValue W4SpecialValue Weapon5Value W5SValue W5MValue W5LValue W5MaxValue W5DmgValue W5BValue W5AmmoValue W5SpecialValue)
-        bs = 0
-        ph = 0
+
         # for each record past the header line
         record = f.readline()
         while record != '':
@@ -281,17 +322,36 @@ def generate_images_from_template(image, drawable, filename, append, outdirector
             try:
                 values = record.split('\t')
                 # duplicate the template image
-                duplicate = pdb.gimp_image_duplicate(image)
-                # for each layer name in the header
-                index = 0
-                if not os.path.exists(outdirectory):
-                    os.mkdir(outdirectory)
-                outfile = outdirectory + '\\' + values[0]+ append + ".png"
+                # duplicate = pdb.gimp_image_duplicate(image)
+
                 logProcessing(values[0], "Processing started")
-                weapon_y_offset = 604
+                fname = values[1]
+                i = fname.rindex('.')
+                if append == '-Back':
+                    fname = fname[:i] + '-Back' + fname[i:]
+
+                duplicate = pdb.gimp_xcf_load(0, rootDirectory + 'Templates\\' + fname, rootDirectory + 'Templates\\' + fname)
+                logProcessing(values[0], fname + ' loaded')
+                # for each layer name in the header
+
+                index = 0
+                outdir = outdirectory + '\\' + fname[:i]
+                logProcessing(values[0], 'Searching for ' + outdir)
+                if not os.path.exists(outdir):
+                    os.mkdir(outdir)
+                outfile = outdir + '\\' + values[0]+ append + ".png"
+                logProcessing(values[0], 'Writing to ' + outfile)
+                if fname.find('Symbiont') > 0:
+                    weapon_y_offset = 715
+                else:
+                    weapon_y_offset = 604
                 abilityTitle = ''
                 current_y = 50
-
+                bs = 0
+                ph = 0
+                wip = 0
+                xvisor = False
+                logProcessing(values[0], 'Starting layer loop')
                 for layerName in headerLine.split('\t'):
                     # find the matching layer
                     layerName = layerName.strip()
@@ -307,7 +367,7 @@ def generate_images_from_template(image, drawable, filename, append, outdirector
                             current_y += addRulesText(duplicate,abilityTitle, value, current_y) + 20
                     else:
                         if layerName.strip()[:6] == 'Weapon' and append != '-Back':
-                            weapon_y_offset = addWeapon(duplicate, value, weapon_y_offset, weapons, bs, ph)
+                            weapon_y_offset = addWeapon(duplicate, value, weapon_y_offset, weapons, bs, ph, wip, xvisor)
                         elif layerName.strip() == 'SectorialSymbol' and len(value) > 0:
                             addSectorialImage(duplicate, values, index)
                         elif layer is None:
@@ -331,18 +391,17 @@ def generate_images_from_template(image, drawable, filename, append, outdirector
                             except Exception as e:
                                 logError(e, values[0])
                                 pass
+                        if layerName == 'WIPValue':
+                            try:
+                                wip = int(value)
+                            except Exception as e:
+                                logError(e, values[0])
+                                pass
+                        if layerName == 'UnitNotesValue' and value.find('X Visor') >= 0:
+                            xvisor = True
+
                     index = index + 1
                 # write the duplicate to disk
-                # width = 4.25" * 500 pixels per inch
-                scaled_width = 3.66
-                width = scaled_width * 500
-                # height =  3" *
-                height = 3 * ( scaled_width / 5) * 500
-
-                if append == '-Back':
-                    pdb.gimp_image_scale(duplicate, height, width)
-                else:
-                    pdb.gimp_image_scale(duplicate, width, height)
                 merged = pdb.gimp_image_merge_visible_layers(duplicate, CLIP_TO_IMAGE)
                 logProcessing(values[0], "Writing PNG")
                 #pdb.gimp_image_set_resolution(duplicate, 500, 500)

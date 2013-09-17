@@ -6,6 +6,7 @@ import json
 import tohaa_symbiont
 import sectorials
 
+template = ""
 rootDirectory = 'C:\Users\u0064666\Documents\GitHub\InfinityTroopCards\\'
 rootOutputPath = rootDirectory + 'Data\\'
 pathToIcons = rootDirectory + 'ImagesFromCB\\'
@@ -29,10 +30,10 @@ rules = {}
 weaponData = {}
 blankWeaponString = '\t'
 weaponHeader = 'W1SValue\tW1MValue\tW1LValue\tW1MaxValue\tW1DmgValue\tW1BValue\tW1AmmoValue\tW1SpecialValue'
-header= 'UnitNameValue\tUnitIcon\tUnitPortrait\tTrainingIcon\tImpIcon\tSectorialSymbol\tSectorialAVA\tSectorialLinkable\tMOVValue\tCCValue\tBSValue\tPHValue\tWIPValue\tARMValue\tBTSValue\tWValue\tAVAValue\tSWCCost\tUnitCost\tUnitNotesValue\tAbility1Title\tAbility1Text\tAbility2Title\tAbility2Text\tAbility3Title\tAbility3Text\tAbility4Title\tAbility4Text\tAbility5Title\tAbility5Text\tAbility6Title\tAbility6Text\tWeapon1Value\tWeapon2Value\tWeapon3Value\tWeapon4Value\tWeapon5Value\tInactiveMOVValue\tInactiveCCValue\tInactiveBSValue\tInactivePHValue\tInactiveWIPValue\tInactiveARMValue\tInactiveBTSValue\tInactiveWValue'
+header= 'UnitNameValue\tGIMPTemplate\tUnitIcon\tUnitPortrait\tTrainingIcon\tImpIcon\tSectorialSymbol\tSectorialAVA\tSectorialLinkable\tMOVValue\tCCValue\tBSValue\tPHValue\tWIPValue\tARMValue\tBTSValue\tWValue\tAVAValue\tSWCCost\tUnitCost\tUnitNotesValue\tAbility1Title\tAbility1Text\tAbility2Title\tAbility2Text\tAbility3Title\tAbility3Text\tAbility4Title\tAbility4Text\tAbility5Title\tAbility5Text\tAbility6Title\tAbility6Text\tWeapon1Value\tWeapon2Value\tWeapon3Value\tWeapon4Value\tWeapon5Value\tInactiveMOVValue\tInactiveCCValue\tInactiveBSValue\tInactivePHValue\tInactiveWIPValue\tInactiveARMValue\tInactiveBTSValue\tInactiveWValue'
 currentISC = 'null'
 fout = None
-
+aggregate = None
 
 def getUnitIcons(dict):
     unitIcon = ''
@@ -138,6 +139,19 @@ def writeAbilities(dict, loadout):
 def writeWeapons(dict, loadout):
     line = ''
     count = 0
+
+    for ability in dict['spec']:
+        if ability == 'Forward Observer':
+            count += 2
+            line += 'Forward Observer\t'
+            line += 'Flash Pulse\t'
+
+    for ability in loadout['spec']:
+        if ability == 'Forward Observer':
+            count += 2
+            line += 'Forward Observer\t'
+            line += 'Flash Pulse\t'
+
     for weapon in dict['bsw']:
         count += 1
         if count > 5:
@@ -181,7 +195,13 @@ def writeName(dict, loadout):
 
 def unit(dict):
     if 'name' in dict and 'cbcode' in dict and 'army' in dict:
+        global template
         line = ""
+        if 'Symbiont Armour' in dict['spec']:
+            line = 'Tohaa-Symbiont.xcf\t'
+        else:
+            line = template + '\t'
+
         global fout
 
         if 'childs' in dict:
@@ -214,6 +234,7 @@ def unit(dict):
 
                 print printLine
                 fout.write(unicode(printLine))
+                aggregate.write(unicode(printLine))
 
     if 'code' in dict:
         return dict
@@ -252,9 +273,10 @@ def rulesAndEquipment(dict):
 
 def runFile(name, army):
     global fout
+    global template
+    template = army + ".xcf"
     fout = open(rootOutputPath + army + ".dat", "w")
     fout.write(header + "\r\n")
-    rootDirectory + 'Code\InfinityJSONParser\Data\\'
     f = open(rootDirectory + 'Code\InfinityJSONParser\Data\\' + name, "r")
     data = json.load(f, object_hook=unit)
 
@@ -269,6 +291,8 @@ sectorials.parseSectorials(rootDirectory)
 
 decoder.count_rules_frequency()
 
+aggregate = open(rootDirectory + '\Data\infinity.dat', 'w')
+aggregate.write(header + "\r\n")
 runFile("aleph.json", "aleph")
 runFile("ariadna.json", "ariadna")
 runFile("combined.json", "ca")

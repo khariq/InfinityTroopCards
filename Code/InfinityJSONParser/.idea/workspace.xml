@@ -4,7 +4,7 @@
     <list default="true" id="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" name="Default" comment="" />
     <ignored path="InfinityJSONParser.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/jsonReader.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379088760696" ignored="false" />
+    <file path="/jsonReader.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379358785543" ignored="false" />
     <file path="/ariadna.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377537599525" ignored="false" />
     <file path="/decoder.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377536410472" ignored="false" />
     <file path="/yujing.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377633458062" ignored="false" />
@@ -20,10 +20,11 @@
     <file path="$PROJECT_DIR$/../CBImageSpider/ReadFaction.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377696696312" ignored="false" />
     <file path="/ReadFaction.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377696551504" ignored="false" />
     <file path="/fragment.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379080939212" ignored="false" />
-    <file path="/duplicate_from_template.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379092001188" ignored="false" />
+    <file path="/duplicate_from_template.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379426309668" ignored="false" />
     <file path="/rules.json" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1377720501675" ignored="false" />
     <file path="/tohaa_symbiont.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379085420774" ignored="false" />
     <file path="/sectorials.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379086978980" ignored="false" />
+    <file path="/make_pdf_image_from_render_directory.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379427840867" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,19 +47,71 @@
       <file leaf-file-name="jsonReader.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jsonReader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="104" column="0" selection-start="3317" selection-end="3317" vertical-scroll-proportion="0.0">
+            <state line="307" column="0" selection-start="8696" selection-end="8696" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="duplicate_from_template.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ariadna.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/ariadna.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3072" column="13" selection-start="44313" selection-end="44313" vertical-scroll-proportion="1.8431373">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="duplicate_from_template.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="264" column="16" selection-start="10633" selection-end="10633" vertical-scroll-proportion="0.05483871">
-              <folding>
-                <element signature="e#5404#8584#0" expanded="false" />
-              </folding>
+            <state line="407" column="159" selection-start="17697" selection-end="17840" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="pano.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/pano.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3337" column="13" selection-start="48270" selection-end="48270" vertical-scroll-proportion="-4.9607844">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="combined.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/combined.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1289" column="2" selection-start="19470" selection-end="19470" vertical-scroll-proportion="-1.2941177">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="nomads.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/nomads.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3084" column="12" selection-start="45158" selection-end="45158" vertical-scroll-proportion="-4.627451">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="make_pdf_image_from_render_directory.py" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/make_pdf_image_from_render_directory.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="106" column="31" selection-start="3947" selection-end="3947" vertical-scroll-proportion="0.35949764">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="weapons.json" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Data/Other/weapons.json">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1659" column="17" selection-start="29584" selection-end="29584" vertical-scroll-proportion="-7.2941175">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -72,35 +125,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tohaa_symbiont.py" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tohaa_symbiont.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="33" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="sectorials.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Data/Other/sectorials.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="713" column="0" selection-start="10419" selection-end="10419" vertical-scroll-proportion="-5.230769">
-              <folding>
-                <element signature="e#3#1604#0" expanded="false" />
-                <element signature="e#1607#2822#0" expanded="false" />
-                <element signature="e#2825#4367#0" expanded="false" />
-                <element signature="e#4370#5856#0" expanded="false" />
-                <element signature="e#5859#7078#0" expanded="false" />
-                <element signature="e#7081#8726#0" expanded="false" />
-                <element signature="e#8729#10417#0" expanded="false" />
-                <element signature="e#10420#12188#0" expanded="false" />
-                <element signature="e#12191#13835#0" expanded="false" />
-                <element signature="e#13838#15356#0" expanded="false" />
-                <element signature="e#15359#16666#0" expanded="false" />
-                <element signature="e#16669#18380#0" expanded="false" />
-                <element signature="e#18383#19433#0" expanded="false" />
-                <element signature="e#19436#20766#0" expanded="false" />
-              </folding>
+            <state line="713" column="0" selection-start="10419" selection-end="10419" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -115,12 +144,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/Data/combined.json" />
-        <option value="$PROJECT_DIR$/Data/haqq.json" />
-        <option value="$PROJECT_DIR$/Data/nomads.json" />
-        <option value="$PROJECT_DIR$/Data/pano.json" />
-        <option value="$PROJECT_DIR$/Data/yujing.json" />
-        <option value="$USER_HOME$/.gimp-2.8/plug-ins/py-test.py" />
         <option value="$PROJECT_DIR$/Data/wiki.txt" />
         <option value="$PROJECT_DIR$/Data/rules.json" />
         <option value="$PROJECT_DIR$/Data/Other/rules.json" />
@@ -129,13 +152,20 @@
         <option value="$PROJECT_DIR$/Data/tohaa.json" />
         <option value="$PROJECT_DIR$/tohaa_symbiont.py" />
         <option value="$PROJECT_DIR$/sectorials.py" />
+        <option value="$PROJECT_DIR$/Data/ariadna.json" />
         <option value="$PROJECT_DIR$/jsonReader.py" />
+        <option value="$PROJECT_DIR$/Data/Other/weapons.json" />
         <option value="$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py" />
+        <option value="$PROJECT_DIR$/Data/pano.json" />
+        <option value="$PROJECT_DIR$/Data/combined.json" />
+        <option value="$PROJECT_DIR$/Data/nomads.json" />
+        <option value="$USER_HOME$/.gimp-2.8/plug-ins/make_pdf_image_from_render_directory.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-9" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
     <option name="width" value="1616" />
     <option name="height" value="1176" />
   </component>
@@ -165,7 +195,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -184,15 +213,48 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinityJSONParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinityJSONParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinityJSONParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="InfinityJSONParser" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Other" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py" />
     <property name="restartRequiresConfirmation" value="true" />
+    <property name="last_opened_file_path" value="$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py" />
     <property name="FullScreen" value="false" />
   </component>
   <component name="PyConsoleOptionsProvider">
@@ -306,18 +368,18 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-9" y="0" width="1616" height="1176" extended-state="0" />
+    <frame x="-8" y="-8" width="1616" height="1176" extended-state="6" />
     <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15508366" sideWeight="0.6712463" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39842984" sideWeight="0.7245817" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.6712463" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15701416" sideWeight="0.6712463" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.050049067" sideWeight="0.7245817" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875368" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32875368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875368" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -387,38 +449,13 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="23" />
+      <option name="time" value="31" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/nomads.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="10" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Python Projects/InfinityJSONParser/jsonReader.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="434" selection-start="888" selection-end="1322" vertical-scroll-proportion="0.2883721" />
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/aleph.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1257" column="6" selection-start="18151" selection-end="18154" vertical-scroll-proportion="0.026898734" />
-      </provider>
-    </entry>
-    <entry file="file://C:/Python27/Lib/json/decoder.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="380" column="0" selection-start="13718" selection-end="13718" vertical-scroll-proportion="0.74164134" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Data/Other/rules.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="69" column="1732" selection-start="61336" selection-end="61338" vertical-scroll-proportion="0.02746365" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/ariadna.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2005" column="0" selection-start="28698" selection-end="28698" vertical-scroll-proportion="0.026898734" />
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/PycharmProjects/InfinityJSONParser/Data/Other/weapons.json">
@@ -428,30 +465,17 @@
     </entry>
     <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/make_card_grid.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="25" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Other/weapons.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1233" column="18" selection-start="22000" selection-end="22000" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="22" column="25" selection-start="427" selection-end="427" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$APPLICATION_HOME_DIR$/helpers/pydev/pydevd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="1119" column="53" selection-start="46753" selection-end="46753" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="1119" column="53" selection-start="46753" selection-end="46753" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/tohaa.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="284" column="16" selection-start="4137" selection-end="4137" vertical-scroll-proportion="0.8181818">
-          <folding />
-        </state>
+        <state line="284" column="16" selection-start="4137" selection-end="4137" vertical-scroll-proportion="0.8181818" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tohaa_symbiont.py">
@@ -463,23 +487,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/Other/sectorials.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="713" column="0" selection-start="10419" selection-end="10419" vertical-scroll-proportion="-5.230769">
-          <folding>
-            <element signature="e#3#1604#0" expanded="false" />
-            <element signature="e#1607#2822#0" expanded="false" />
-            <element signature="e#2825#4367#0" expanded="false" />
-            <element signature="e#4370#5856#0" expanded="false" />
-            <element signature="e#5859#7078#0" expanded="false" />
-            <element signature="e#7081#8726#0" expanded="false" />
-            <element signature="e#8729#10417#0" expanded="false" />
-            <element signature="e#10420#12188#0" expanded="false" />
-            <element signature="e#12191#13835#0" expanded="false" />
-            <element signature="e#13838#15356#0" expanded="false" />
-            <element signature="e#15359#16666#0" expanded="false" />
-            <element signature="e#16669#18380#0" expanded="false" />
-            <element signature="e#18383#19433#0" expanded="false" />
-            <element signature="e#19436#20766#0" expanded="false" />
-          </folding>
+        <state line="713" column="0" selection-start="10419" selection-end="10419" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -490,19 +499,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Data/ariadna.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3072" column="13" selection-start="44313" selection-end="44313" vertical-scroll-proportion="1.8431373">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jsonReader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="104" column="0" selection-start="3317" selection-end="3317" vertical-scroll-proportion="0.0">
+        <state line="307" column="0" selection-start="8696" selection-end="8696" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Other/weapons.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1659" column="17" selection-start="29584" selection-end="29584" vertical-scroll-proportion="-7.2941175">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/pano.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3337" column="13" selection-start="48270" selection-end="48270" vertical-scroll-proportion="-4.9607844">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/combined.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1289" column="2" selection-start="19470" selection-end="19470" vertical-scroll-proportion="-1.2941177">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/nomads.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3084" column="12" selection-start="45158" selection-end="45158" vertical-scroll-proportion="-4.627451">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="264" column="16" selection-start="10633" selection-end="10633" vertical-scroll-proportion="0.05483871">
-          <folding>
-            <element signature="e#5404#8584#0" expanded="false" />
-          </folding>
+        <state line="407" column="159" selection-start="17697" selection-end="17840" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/make_pdf_image_from_render_directory.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="106" column="31" selection-start="3947" selection-end="3947" vertical-scroll-proportion="0.35949764">
+          <folding />
         </state>
       </provider>
     </entry>
