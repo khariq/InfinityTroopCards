@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" name="Default" comment="" />
+    <list default="true" id="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+    </list>
     <ignored path="InfinityJSONParser.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/jsonReader.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379358785543" ignored="false" />
@@ -25,6 +28,7 @@
     <file path="/tohaa_symbiont.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379085420774" ignored="false" />
     <file path="/sectorials.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379086978980" ignored="false" />
     <file path="/make_pdf_image_from_render_directory.py" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379516342525" ignored="false" />
+    <file path="/Dummy.txt" changelist="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" time="1379601035043" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,10 +48,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="jsonReader.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="jsonReader.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jsonReader.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="307" column="0" selection-start="8696" selection-end="8696" vertical-scroll-proportion="0.0">
+            <state line="188" column="24" selection-start="5163" selection-end="5166" vertical-scroll-proportion="0.33225808">
               <folding />
             </state>
           </provider>
@@ -62,10 +66,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="make_pdf_image_from_render_directory.py" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="make_pdf_image_from_render_directory.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/make_pdf_image_from_render_directory.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="121" column="0" selection-start="4757" selection-end="4757" vertical-scroll-proportion="0.62401265">
+            <state line="146" column="28" selection-start="5575" selection-end="5575" vertical-scroll-proportion="0.0">
               <folding>
                 <element signature="e#22#42#0" expanded="true" />
               </folding>
@@ -88,6 +92,14 @@
     <FindUsagesManager>
       <setting name="OPEN_NEW_TAB" value="false" />
     </FindUsagesManager>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="GitLogSettings">
+    <option name="myDateState">
+      <MyDateState />
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -117,7 +129,7 @@
     <option name="width" value="1616" />
     <option name="height" value="1176" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="false">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
     <OptionsSetting value="true" id="Remove" />
     <OptionsSetting value="true" id="Checkout" />
@@ -167,11 +179,15 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
     <property name="recentsLimit" value="5" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../.." />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="last_opened_file_path" value="$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py" />
     <property name="FullScreen" value="false" />
+    <property name="options.searchVisible" value="true" />
+    <property name="options.splitter.details.proportions" value="0.2" />
   </component>
   <component name="PyConsoleOptionsProvider">
     <option name="myPythonConsoleState">
@@ -275,6 +291,23 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration" maxAnnotateRevisions="500" myUseAcceleration="nothing" myAutoUpdateAfterCommit="false" cleanupOnStartRun="false" SSL_PROTOCOLS="all">
+    <option name="USER" value="" />
+    <option name="PASSWORD" value="" />
+    <option name="mySSHConnectionTimeout" value="30000" />
+    <option name="mySSHReadTimeout" value="30000" />
+    <option name="LAST_MERGED_REVISION" />
+    <option name="MERGE_DRY_RUN" value="false" />
+    <option name="MERGE_DIFF_USE_ANCESTRY" value="true" />
+    <option name="UPDATE_LOCK_ON_DEMAND" value="false" />
+    <option name="IGNORE_SPACES_IN_MERGE" value="false" />
+    <option name="CHECK_NESTED_FOR_QUICK_MERGE" value="false" />
+    <option name="IGNORE_SPACES_IN_ANNOTATE" value="true" />
+    <option name="SHOW_MERGE_SOURCES_IN_ANNOTATE" value="true" />
+    <option name="FORCE_UPDATE" value="false" />
+    <option name="IGNORE_EXTERNALS" value="false" />
+    <myIsUseDefaultProxy>false</myIsUseDefaultProxy>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="e7a5232f-c6a8-4cac-83c7-1ae0cfcc1046" name="Default" comment="" />
@@ -284,14 +317,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1616" height="1176" extended-state="6" />
-    <editor active="false" />
+    <frame x="-8" y="-8" width="1616" height="1176" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24967825" sideWeight="0.6712463" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15701416" sideWeight="0.6712463" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15894467" sideWeight="0.6712463" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.050049067" sideWeight="0.7245817" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32875368" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -396,14 +429,42 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tohaa_symbiont.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="33" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="8" column="33" selection-start="202" selection-end="202" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Data/Other/sectorials.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="713" column="0" selection-start="10419" selection-end="10419" vertical-scroll-proportion="0.0">
+        <state line="713" column="0" selection-start="10419" selection-end="10419" vertical-scroll-proportion="0.0" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/ariadna.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3072" column="13" selection-start="44313" selection-end="44313" vertical-scroll-proportion="1.8431373" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/Other/weapons.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1659" column="17" selection-start="29584" selection-end="29584" vertical-scroll-proportion="-7.2941175" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/combined.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1289" column="2" selection-start="19470" selection-end="19470" vertical-scroll-proportion="-1.2941177" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/nomads.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3082" column="46" selection-start="45125" selection-end="45125" vertical-scroll-proportion="-3.9607842" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Data/pano.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3337" column="13" selection-start="48270" selection-end="48270" vertical-scroll-proportion="0.4317406" />
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="314" column="0" selection-start="13137" selection-end="13137" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -415,61 +476,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Data/ariadna.json">
+    <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/make_pdf_image_from_render_directory.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3072" column="13" selection-start="44313" selection-end="44313" vertical-scroll-proportion="1.8431373">
-          <folding />
+        <state line="146" column="28" selection-start="5575" selection-end="5575" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#22#42#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jsonReader.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="307" column="0" selection-start="8696" selection-end="8696" vertical-scroll-proportion="0.0">
+        <state line="188" column="24" selection-start="5163" selection-end="5166" vertical-scroll-proportion="0.33225808">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/Other/weapons.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1659" column="17" selection-start="29584" selection-end="29584" vertical-scroll-proportion="-7.2941175">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/combined.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1289" column="2" selection-start="19470" selection-end="19470" vertical-scroll-proportion="-1.2941177">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/nomads.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3082" column="46" selection-start="45125" selection-end="45125" vertical-scroll-proportion="-3.9607842">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Data/pano.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3337" column="13" selection-start="48270" selection-end="48270" vertical-scroll-proportion="0.4317406">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/duplicate_from_template.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="314" column="0" selection-start="13137" selection-end="13137" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.gimp-2.8/plug-ins/make_pdf_image_from_render_directory.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="121" column="0" selection-start="4757" selection-end="4757" vertical-scroll-proportion="0.62401265">
-          <folding>
-            <element signature="e#22#42#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
